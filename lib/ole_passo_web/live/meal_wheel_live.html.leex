@@ -1,0 +1,15 @@
+<section class="phx-hero">
+  <h1><%= gettext "Roulette des repas !" %></h1>
+  <p>Vous ne savez pas où manger ? On va vous aider !</p>
+  <p><small>Solution garantie sans Javascript... ou presque.</small></p>
+
+  <button phx-click="add">add</button>
+  <div>
+    <h3><%= @item %></h3>
+  </div>
+  <div>
+    <button phx-click="rotate">ROLL</button>
+    <img src="images/wheel.png", style="transform: rotate(<%= Integer.to_string(@rotation) %>deg);">
+    </div>
+  <h1><%= @rotation %></h1>
+</section>

@@ -19,6 +19,7 @@ defmodule OlePassoWeb.Router do
 
     live("/", PageLive, :index)
     live("/test", TestLive, :test)
+    live("/meal-wheel", MealWheelLive)
   end
 
   # Other scopes may use custom stacks.

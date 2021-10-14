@@ -1,7 +1,7 @@
 <section class="phx-hero">
   <h1><%= gettext "Le jeu du 3-4" %></h1>
   <p>Vous êtes PM et vous ne savez pas comment dépenser votre argent ? Tentez le 3-4 !</p>
-  
+
   <img src="images/d5.png" phx-click="test">
   <img src="images/d4.png" phx-click="test">
   <p><%= @test %></p>
@@ -14,7 +14,7 @@
   <h1><%= gettext "Roulette des repas !" %></h1>
   <p>Vous ne savez pas où manger ? On va vous aider !</p>
   <p><small>Solution garantie sans Javascript... ou presque.</small></p>
-  
+
   <form phx-change="suggest" phx-submit="search">
     <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
     <datalist id="results">
@@ -22,7 +22,7 @@
         <option value="<%= app %>"><%= app %></option>
       <% end %>
     </datalist>
-    <button type="submit" phx-disable-with="Searching...">Go to Hexdocs</button>
+    <button type="submit" phx-disable-with="Searching..."></button>
   </form>
   <img src="images/wheel.png", style="transform: rotate(15deg);">
 </section>
