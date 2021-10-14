@@ -20,6 +20,18 @@ import {Socket} from "phoenix"
 import NProgress from "nprogress"
 import {LiveSocket} from "phoenix_live_view"
 
+let Hooks = {}
+Hooks.Ole = {
+  mounted() {
+    this.el.addEventListener("input", e => {
+      let match = this.el.value.replace(/\D/g, "").match(/^(\d{3})(\d{3})(\d{4})$/)
+      if(match) {
+        this.el.value = `${match[1]}-${match[2]}-${match[3]}`
+      }
+    })
+  }
+}
+
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
   params: {_csrf_token: csrfToken}, 
