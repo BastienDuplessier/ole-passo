@@ -1,0 +1,62 @@
+<section class="phx-hero">
+  <h1><%= gettext "Le jeu du 3-4" %></h1>
+  <p>Vous êtes PM et vous ne savez pas comment dépenser votre argent ? Tentez le 3-4 !</p>
+  
+  <img src="images/d5.png" phx-click="test">
+  <img src="images/d4.png" phx-click="test">
+  <p><%= @test %></p>
+  <div>
+    Salut les gens
+  </div>
+</section>
+
+<section class="phx-hero">
+  <h1><%= gettext "Roulette des repas !" %></h1>
+  <p>Vous ne savez pas où manger ? On va vous aider !</p>
+  <p><small>Solution garantie sans Javascript... ou presque.</small></p>
+  
+  <form phx-change="suggest" phx-submit="search">
+    <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
+    <datalist id="results">
+      <%= for {app, _vsn} <- @results do %>
+        <option value="<%= app %>"><%= app %></option>
+      <% end %>
+    </datalist>
+    <button type="submit" phx-disable-with="Searching...">Go to Hexdocs</button>
+  </form>
+  <img src="images/wheel.png", style="transform: rotate(15deg);">
+</section>
+
+<section class="row">
+  <article class="column">
+    <h2>Resources</h2>
+    <ul>
+      <li>
+        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix">Source</a>
+      </li>
+      <li>
+        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
+      </li>
+    </ul>
+  </article>
+  <article class="column">
+    <h2>Help</h2>
+    <ul>
+      <li>
+        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
+      </li>
+      <li>
+        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
+      </li>
+      <li>
+        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
+      </li>
+    </ul>
+  </article>
+</section>
